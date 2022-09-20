@@ -1,0 +1,64 @@
+name: env_FinDA
+
+channels:
+  - plotly
+  # https://anaconda.org/plotly/repo
+  - ranaroussi
+  # https://anaconda.org/ranaroussi/repo
+  - conda-forge
+  # https://anaconda.org/conda-forge/repo
+  - defaults
+
+dependencies:
+
+  # Jupyter Environment
+  - ipython
+  - jupyter
+  - rise
+
+  # https://jupyter-contrib-nbextensions.readthedocs.io/
+  - jupyter_contrib_nbextensions
+  # https://github.com/ipython-contrib/jupyter_contrib_nbextensions/blob/master/CHANGELOG.md#053
+  - nbconvert=5.6.1
+  - jinja2=3.0.3
+  - ipywidgets=7.6.5
+  - jupyterlab_widgets=1.0.2
+
+  # to utilise the nbextensions, we had to run the following in anaconda prompt
+  #   conda install -c conda-forge jupyter_contrib_nbextensions
+  #   jupyter contrib nbextension install --user
+  #   jupyter nbextensions_configurator enable --user
+  # https://github.com/ipython-contrib/jupyter_contrib_nbextensions/issues/1529#issuecomment-814677078
+  # Replace template_path with template_paths in the following files:
+  # xxx/anaconda3/lib/python3.x/site-packages/jupyter_contrib_nbextensions/nbconvert_support/exporter_inliner.py
+  # xxx/anaconda3/lib/python3.x/site-packages/jupyter_contrib_nbextensions/nbconvert_support/toc2.py
+  #   jupyter nbextension enable hide_input/main
+  # now can utilise: http://localhost:8888/tree#nbextensions_configurator
+ 
+
+  # Data Analysis
+  - seaborn
+  # matplotlib
+  # numpy
+  # pandas
+  # python
+  # scipy
+  - numexpr
+  # evaluates the string expression passed as a parameter to the evaluate function
+
+  # pd.read_excel() has dependency on:
+  - openpyxl
+
+  # Machine Learning
+  - scikit-learn
+
+  # Astronomical utilities
+  - astropy
+
+  # plotting
+  - plotly
+  # plotly channel = https://anaconda.org/plotly/repo
+
+  # finance
+  - yfinance
+  # ranaroussi channel = https://anaconda.org/ranaroussi/repo
